@@ -20,8 +20,10 @@
     <td th:text="${user.lastName}">v</td>
     <td>
     <a th:href="@{'/users/edit/'+ ${user.id}}" class="btn btn-info">Edit</a></td>
-    <td> <a th:href="@{'/users/delete/'+ ${user.id}}" class="btn btn-info">Delete</a></td>
-
+    <form action="#" th:action="@{'/users/delete/'+ ${user.id}}" th:object="${user}"
+          method="POST">
+    <td> <button type="submit" class="btn btn-info col-2"> Delete</button> </td>
+    </form>
   </tr>
 </table>
 </div>
